@@ -6,11 +6,11 @@
 ## Alunos
 |Matrícula | Aluno |
 | -- | -- |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
-| xx/xxxxxx  |  xxxx xxxx xxxxx |
+| 18/0106970  |  Matheus Gabriel Alves Rodrigues |
+| 18/0129287 |  Pedro Henrique Vieira Lima |
 
 ## Sobre 
-Descreva os objetivos do seu projeto e como ele funciona. 
+Sistema criado para ajudar Pedro e Bino a escolher a maior quantidade de carga disponivel de maneira com que eles consigam lucrar o maximo possivel.
 
 ## Screenshots
 Adicione 3 ou mais screenshots do projeto em funcionamento.
