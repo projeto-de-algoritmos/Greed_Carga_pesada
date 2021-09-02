@@ -23,3 +23,28 @@ def bubbleSort_charge(charge_list):
                 charge_list[i] = charge_list[i+1]
                 charge_list[i+1] = temp
 
+def knapsack(charger_list, max_weight):
+    bubbleSort_charge(charger_list)
+    selected = []
+    for charge in charger_list:
+        if max_weight == 0:
+            return selected
+        elif charge.get_weight() <= max_weight:
+            selected.append((charge, 1))
+            max_weight -= charge.get_weight()
+        elif max_weight > 0:
+            variable = max_weight/charge.get_weight()
+            selected.append((charge, variable))
+            max_weight = 0
+    if max_weight >= 0:
+        return selected
+
+
+
+box1 = Charge(10,60)
+box2 = Charge(20,100)
+box3 = Charge(30,120)
+
+alist = [box3, box2, box1]
+for i in knapsack(alist, 100):
+    print(i[0], ", ", i[1])
