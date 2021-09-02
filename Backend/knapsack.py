@@ -38,13 +38,3 @@ def knapsack(charger_list, max_weight):
             max_weight = 0
     if max_weight >= 0:
         return selected
-
-
-
-box1 = Charge(10,60)
-box2 = Charge(20,100)
-box3 = Charge(30,120)
-
-alist = [box3, box2, box1]
-for i in knapsack(alist, 100):
-    print(i[0], ", ", i[1])
