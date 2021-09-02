@@ -1,15 +1,19 @@
 class Charge:
-    def __init__(self, weight, value):
+    def __init__(self, name, weight, value):
+        self.name = name
         self.weight = weight
         self.value = value
     
-    def get_weight(self):
+    def get_name(self) -> str:
+        return self.name
+
+    def get_weight(self) -> int:
         return self.weight
     
-    def get_value(self):
+    def get_value(self) -> int:
         return self.value
     
-    def get_value_per_weight(self):
+    def get_value_per_weight(self) -> float:
         return self.value/self.weight
     
     def __str__(self):
@@ -23,10 +27,10 @@ def bubbleSort_charge(charge_list):
                 charge_list[i] = charge_list[i+1]
                 charge_list[i+1] = temp
 
-def knapsack(charger_list, max_weight):
-    bubbleSort_charge(charger_list)
+def knapsack(charge_list, max_weight):
+    bubbleSort_charge(charge_list)
     selected = []
-    for charge in charger_list:
+    for charge in charge_list:
         if max_weight == 0:
             return selected
         elif charge.get_weight() <= max_weight:
