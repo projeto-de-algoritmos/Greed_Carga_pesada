@@ -2,11 +2,12 @@ import React from 'react';
 import './styles.css'
 import Card  from '../Card'
 
-function List({answers}){
+function List({answers, deleteCard}){
 
   return(
-    <div>
-      {answers.map((item)=><Card key={item.nome} {...item}></Card>)}
+    <div className="cardList">
+      {answers.map((item)=><Card key={item.nome} {...item} 
+      deleteCard={()=>deleteCard(answers.filter((iten)=>iten.nome!==item.nome))}></Card>)}
     </div>
   );
 }

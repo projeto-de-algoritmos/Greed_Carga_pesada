@@ -9,16 +9,37 @@ function App() {
 
   const [answers, setAnswers] = useState([]);
   const { register, handleSubmit, reset, formState:{errors} } = useForm();
-
+  const {
+    register: register1,
+    formState: { errors: errors1 },
+    handleSubmit: handleSubmit1,
+  } = useForm();
+  
   function onSubmit (data){
     setAnswers([...answers,data]);
     reset();
+  }
+  function sendButton(pesoMax){
+    const reqBody = {
+      pesoMax,
+      data:answers
+    }
+    console.log(reqBody);
+
+    const requestOptions = {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(reqBody)
+  };
+  fetch('', requestOptions)
+      .then(response => response.json())
+      .then(data => console.log(data));
   }
 
   return (
     <>
       <div className="form">
-        <form onSubmit={handleSubmit(onSubmit)}>
+        <form key={0} onSubmit={handleSubmit(onSubmit)}>
           <div className="inputField">
             <Input 
               register={register("nome", {
@@ -56,7 +77,24 @@ function App() {
           <Button title = 'Adicionar'/>
         </form>
       </div>
-      <List answers={answers}/> 
+      <List answers={answers} deleteCard={setAnswers}/>
+      <form className="sendForm" onSubmit={handleSubmit1(sendButton)}>
+        <div className="sendFormContainer">
+        <Input 
+              register={register1("pesoMax", {
+                validate: value => value > 0 || 'Valor inválido!'
+              })} 
+              inputPlaceholder = "Peso max" 
+              inputTitle="Peso máximo suportado" 
+              type="number"
+              step="any" 
+              error={errors1.pesoMax}>
+            </Input>
+        </div>
+      
+        <Button title = 'Calcular'/> 
+
+      </form>
     </>
   );
 }
