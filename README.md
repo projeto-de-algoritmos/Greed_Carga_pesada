@@ -1,5 +1,7 @@
 # Greed_Carga_Pesada
 
+<img src="Assets/icon.png" alt="drawing" width="300"/>
+
 **Número da Lista**: X<br>
 **Conteúdo da Disciplina**: Greed<br>
 
@@ -25,6 +27,4 @@ Explique como usar seu projeto caso haja algum passo a passo após o comando de 
 
 ## Outros 
 Quaisquer outras informações sobre seu projeto podem ser descritas abaixo.
-
-
 
