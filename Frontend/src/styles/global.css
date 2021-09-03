@@ -1,0 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.inputField{
+  display: flex;
+  margin-top: 150px;
+  margin-bottom: 40px;
+  justify-content: space-between;
+}
+.form{
+  margin:0 20% 0;
+  text-align: center;
+}
