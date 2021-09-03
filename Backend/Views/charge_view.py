@@ -15,17 +15,9 @@ def prepare_data(charge_list) -> dict:
 
 @charge_view.route('/charge/', methods=["GET", "POST"])
 def charge_route():
-    if request.method == "GET":
-        print(charge_list)
-        result = charge_list.knapsack()
-        response = Response(
-                response=json.dumps(result),
-                status=200,
-                mimetype='charge_viewlication/json'
-            )
-        return response
-    elif request.method == "POST":
-        data = request.args.to_dict()
+    if request.method == "POST":
+        data = request.get_json()
+        print(data.keys())
         if 'data' not in data.keys() or 'pesoMax' not in data.keys():
             response = Response(
                     status=400,
@@ -33,7 +25,7 @@ def charge_route():
                 )
             return response
         else: 
-            charge_list = ChargeList(eval(data['data']), data['pesoMax'])
+            charge_list = ChargeList(data['data'], data['pesoMax']['pesoMax'])
             result = {'data': charge_list.knapsack()}
             response = Response(
                     response=json.dumps(result),
