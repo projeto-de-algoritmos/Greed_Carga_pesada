@@ -20,11 +20,11 @@ class ChargeList:
             if self.max_weight == 0:
                 return selected
             elif charge.get_weight() <= self.max_weight:
-                selected.append([ {'nome': charge.get_name(), 'peso': charge.get_weight(), 'valor': charge.get_value()}, 1 ])
+                selected.append({'nome': charge.get_name(), 'peso': charge.get_weight(), 'valor': charge.get_value(), 'porcentagem': 1})
                 self.max_weight -= charge.get_weight()
             elif self.max_weight > 0:
                 variable = self.max_weight/charge.get_weight()
-                selected.append([ {'nome': charge.get_name(), 'peso': charge.get_weight(), 'valor': charge.get_value()}, variable ])
+                selected.append({'nome': charge.get_name(), 'peso': charge.get_weight(), 'valor': charge.get_value(), 'porcentagem': variable} )
                 self.max_weight = 0
         if self.max_weight >= 0:
             return selected
