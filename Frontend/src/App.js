@@ -5,6 +5,7 @@ import axios from 'axios';
 import { useState} from 'react';
 import { useForm } from "react-hook-form";
 import './styles/global.css';
+import logo from './assets/icon.png';
 
 function App() {
 
@@ -29,13 +30,17 @@ function App() {
         const headers = {'content-type': 'application/json'}     
         axios.post('http://127.0.0.1:5000/charge/', reqBody, headers)     
             .then(function (response) {       
-                console.log(response);     })
+                setAnswers(response.data.data);
+                console.log(response.data.data);     })
             .catch(error => {       
                 console.log(error)   })
     }
 
     return (
         <>
+        <div className='logo'>
+            <img src={logo} alt="icon" />
+        </div>
         <div className="form">
             <form key={0} onSubmit={handleSubmit(onSubmit)}>
                 <div className="inputField">
@@ -91,7 +96,6 @@ function App() {
       </div>
 
       <Button title = 'Calcular'/> 
-
   </form>
     </>
     );
