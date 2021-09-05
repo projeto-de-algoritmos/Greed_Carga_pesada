@@ -15,7 +15,18 @@
 Sistema criado para ajudar Pedro e Bino a escolher a maior quantidade de carga disponivel de maneira com que eles consigam lucrar o maximo possivel.
 
 ## Screenshots
-Adicione 3 ou mais screenshots do projeto em funcionamento.
+
+### Screenshot 1
+
+<img src="Assets/print1.png" alt="drawing" />
+
+### Screenshot 2
+
+<img src="Assets/print2.png" alt="drawing" />
+
+### Screenshot 3
+
+<img src="Assets/print3.png" alt="drawing" />
 
 ## Instalação 
 **Linguagem**: xxxxxx<br>
