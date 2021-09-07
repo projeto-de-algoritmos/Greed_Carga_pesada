@@ -29,10 +29,36 @@ Sistema criado para ajudar Pedro e Bino a escolher a maior quantidade de carga d
 <img src="Assets/print3.png" alt="drawing" />
 
 ## Instalação 
-**Linguagem**: xxxxxx<br>
-**Framework**: (caso exista)<br>
-Descreva os pré-requisitos para rodar o seu projeto e os comandos necessários.
+**Linguagem**: Python e JS<br>
+**Framework**: Flask e React<br>
 
+### Backend
+
+``` bash
+cd Backend/
+```
+
+``` bash
+pip install flask
+```
+
+``` bash
+python main.py
+```
+
+### Frontend
+
+``` bash
+cd Frontend/
+```
+
+``` bash
+npm install
+```
+
+``` bash
+npm start
+```
 ## Uso 
 Explique como usar seu projeto caso haja algum passo a passo após o comando de execução.
 
